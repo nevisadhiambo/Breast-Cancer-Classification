@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Classifier</title>
+    <link href="{{url_for('static', filename = 'css/styles.css')}}" rel="stylesheet">
+</head>
+<body>
+    <h2>Breast Cancer Classification System</h2>
+    <!-- <p class="lead">upload breast <b>histology images</b></p> -->
+
+    <!-- Upload  -->
+    <form id="file-upload-form" class="uploader" method="post" enctype="multipart/form-data">
+        <input id="file-upload" type="file" name="filename" accept="image/*"  required/>
+
+        <label for="file-upload" id="file-drag">
+            <img id="file-image" src="#" alt="" class="hidden">
+            <div id="start">
+                <i class="fa fa-download" aria-hidden="true"></i>
+            <div>Select a file or drag here</div>
+            <div id="notimage" class="hidden">Please select an image</div>
+                <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+            </div>
+            <div id="response" class="hidden">
+                <div id="messages"></div>
+                <progress class="progress" id="file-progress" value="0">
+                    <span>0</span>%
+                </progress>
+            </div>
+        </label>
+        <input id="submit-button" type="submit" value="Predict" class="btn btn-primary hidden">
+    </form>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Classifier</title>
+    <link href="{{url_for('static', filename = 'css/styles.css')}}" rel="stylesheet">
+</head>
+<body>
+    <h2>Breast Cancer Classification System</h2>
+    <!-- <p class="lead">Classifications <b>Results and Recommendations</b></p> -->
+    <form id="file-upload-form" class="uploader" action="{{ url_for('index') }}">
+        <label for="">
+            <div>
+                <img id="file-image" src="{{ url_for('display', filename=filename) }}">
+                <h1>{{preds}}</h1>
+                <h3>{{recommend}}</h3>
+
+            </div>
+            <div class="">
+              <!-- <h2 style="color:white">Feedback</h2> -->
+              <p>{{des}}</p>
+            </div>
+        </label> <br><br>
+
+        <input type="submit" id="file-upload-btn" class="btn btn-primary" value="Back to Homepage"/>
+
+    </form>
+
+</body>
+</html>
